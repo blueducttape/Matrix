@@ -133,23 +133,6 @@ class Matrix(object):
         rows = [[0] * n for x in range(m)]
         return cls.from_list(rows)
 
-
-    @classmethod
-    def readstdin(cls):
-        """ ввести матрицу вручную """
-
-        print
-        'Введите значения матрицы. Нажмите q для отмены'
-        rows = []
-        while True:
-            line = sys.stdin.readline().strip()
-            if line == 'q': break
-
-            row = [int(x) for x in line.split()]
-            rows.append(row)
-
-        return cls._make_matrix(rows)
-
     @classmethod
     def read_grid(cls, fname):
         """ Прочитать матрицу из файла """
@@ -176,10 +159,13 @@ if __name__ == '__main__':
     m2 = Matrix.from_list([[7, 8, 9], [10, 11, 12]])
     m3 = m1 + m2
     print(m3)
-    #m1 = Matrix.make_random(25, 30)
-    #zero_ = Matrix.make_zero(25, 30)
+    m1 = Matrix.make_random(3, 3)
+    print(m1)
+    zero_ = Matrix.make_zero(2, 2)
+    print(zero_)
     #m2 = m1 + zero_
     #print(m2)
-    #print(m1.transpose())
+    print(m1.transpose())
+
 
 
