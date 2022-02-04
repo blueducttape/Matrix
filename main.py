@@ -28,7 +28,7 @@ class Matrix(object):
     def __repr__(self):
         s = str(self.rows)
         rank = str(self.getRank())
-        rep = "Матрица: \"%s\", ранг: \"%s\"" % (s, rank)
+        rep = "Матрица: \"%s\", размерность: \"%s\"" % (s, rank)
         return rep
 
     def reset(self):
