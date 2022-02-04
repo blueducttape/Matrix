@@ -182,16 +182,4 @@ if __name__ == '__main__':
     #print(m2)
     #print(m1.transpose())
 
-# you're the cause
-# the antidote
-# the sinking ship that i could not let go
-# you led my way then disappeared
-# how could you just walk away and leave me here
-# light the night up, you're my dark star
-# and now you're falling away
-# but i found in you what was lost in me
-# in the world so cold and empty
-# i could lie awake
-# just to watch you breath
-# in the dead of night
-# you went dark on me
+
