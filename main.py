@@ -156,6 +156,7 @@ if __name__ == '__main__':
     m2 = Matrix.from_list([[7, 8, 9], [10, 11, 12]])
     m3 = Matrix.__add__(m1,m2)
     print(m3)
+    print(Matrix.__sub__(m2,m1))
     m1 = Matrix.make_random(3, 3)
     print(m1)
     zero_ = Matrix.make_zero(2, 2)
