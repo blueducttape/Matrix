@@ -45,7 +45,7 @@ class Matrix(object):
         return mat
 
     def get_rank(self):
-        """ Возвращает ранг матрицы """
+        """ Возвращает размерность матрицы """
         return self.m, self.n
 
     def __eq__(self, mat):
@@ -163,6 +163,7 @@ if __name__ == '__main__':
     #m2 = m1 + zero_
     #print(m2)
     print(m1.transpose())
+    print(m1.get_rank())
 
 
 
