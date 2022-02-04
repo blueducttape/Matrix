@@ -12,14 +12,8 @@ class Matrix(object):
             self.rows = [[0] * n for x in range(m)]
         else:
             self.rows = []
-        self.m = m
-        self.n = n
-
-    def __getitem__(self, idx):
-        return self.rows[idx]
-
-    def __setitem__(self, idx, item):
-        self.rows[idx] = item
+        self.m = m  # количество строк
+        self.n = n  # количество столбцов
 
     def __str__(self):
         s = '\n'.join([' '.join([str(item) for item in row]) for row in self.rows])
@@ -48,12 +42,12 @@ class Matrix(object):
         """ Возвращает размерность матрицы """
         return self.m, self.n
 
-    def __eq__(self, mat):
+    def __eq__(self, mat) -> bool:
+        """проверяет, совпадает ли размерность матриц"""
         return mat.rows == self.rows
 
     def __add__(self, mat):
         """ Сложение матриц """
-
         if self.get_rank() != mat.get_rank():
             raise MatrixError("Размеры матриц не совпадают!")
 
