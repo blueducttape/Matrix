@@ -68,7 +68,7 @@ class Matrix(object):
     def __sub__(self, mat):
         """ Вычитание матрицы """
 
-        if self.get_rank() != mat.getRank():
+        if self.get_rank() != mat.get_rank():
             raise MatrixError("Нельзя вычесть матрицы разных размерностей")
 
         ret = Matrix(self.m, self.n)
@@ -82,12 +82,12 @@ class Matrix(object):
     def __mul__(self, mat):
         """ Умножение матрицы, возвращает новую матрицу"""
 
-        matm, matn = mat.getRank()
+        matm, matn = mat.get_rank()
 
         if self.n != matm:
             raise MatrixError("Нельзя умножить матрицы!")
 
-        mat_t = mat.getTranspose()
+        mat_t = mat.transpose()
         multmat = Matrix(self.m, matn)
 
         for x in range(self.m):
@@ -154,7 +154,7 @@ class Matrix(object):
 if __name__ == '__main__':
     m1 = Matrix.from_list([[1, 2, 3], [4, 5, 6]])
     m2 = Matrix.from_list([[7, 8, 9], [10, 11, 12]])
-    m3 = m1 + m2
+    m3 = Matrix.__add__(m1,m2)
     print(m3)
     m1 = Matrix.make_random(3, 3)
     print(m1)
@@ -164,6 +164,7 @@ if __name__ == '__main__':
     #print(m2)
     print(m1.transpose())
     print(m1.get_rank())
-
+    m5 = Matrix.make_random(3, 3)
+    print(Matrix.__mul__(m1,m5))
 
 
