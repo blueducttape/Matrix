@@ -1,7 +1,4 @@
 import random
-import operator
-import sys
-import unittest
 
 
 class MatrixError(Exception):
