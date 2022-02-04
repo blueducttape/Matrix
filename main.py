@@ -72,7 +72,7 @@ class Matrix(object):
         """ Вычитание матрицы """
 
         if self.get_rank() != mat.getRank():
-            raise MatrixError("Нельзя вычесть матрицы разных рангов")
+            raise MatrixError("Нельзя вычесть матрицы разных размерностей")
 
         ret = Matrix(self.m, self.n)
 
@@ -136,10 +136,10 @@ class Matrix(object):
 
     @classmethod
     def readstdin(cls):
-        """ Read a matrix from standard input """
+        """ ввести матрицу вручную """
 
         print
-        'Enter matrix row by row. Type "q" to quit'
+        'Введите значения матрицы. Нажмите q для отмены'
         rows = []
         while True:
             line = sys.stdin.readline().strip()
@@ -152,7 +152,7 @@ class Matrix(object):
 
     @classmethod
     def read_grid(cls, fname):
-        """ Read a matrix from a file """
+        """ Прочитать матрицу из файла """
 
         rows = []
         for line in open(fname).readlines():
